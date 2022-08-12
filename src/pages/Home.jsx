@@ -1,28 +1,34 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import { useState } from 'react';
 import * as api from 'services/Api';
-import { ListFilm } from 'components/ListFilm/ListFilm';
+import { ListCar } from 'components/ListCar/ListCar';
+import { SearchForm } from 'components/SearchForm/SearchForm';
 
 const Home = () => {
-  const [moviesTrend, setMoviesTrend] = useState([]);
-  const location = useLocation();
+  const [autoInfo, setAutoInfo] = useState([]);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const movies = await api.getMoviesTrending();
-      if (movies) {
-        setMoviesTrend(movies);
-      }
-    };
-    fetchMovies();
-  }, []);
+  const fetchAuto = async searchInput => {
+    if (searchInput === '') {
+      return;
+    }
+    const auto = await api.getDecodeVIN(searchInput);
+    console.log(auto);
+
+    if (auto) {
+      setAutoInfo(auto);
+    }
+    if (auto.length === 0) {
+      toast.info(
+        'по вашему запросу не чего не найденно,ищите что-то адекватное. '
+      );
+    }
+  };
 
   return (
     <div>
-      <h1>Trending today</h1>
-      <ListFilm movies={moviesTrend} location={location} />
+      <SearchForm fetchAuto={fetchAuto} />
+      {autoInfo.length > 0 && <ListCar movies={autoInfo} />}
       <ToastContainer />
     </div>
   );
