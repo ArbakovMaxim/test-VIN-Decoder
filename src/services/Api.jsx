@@ -23,3 +23,21 @@ export const getDecodeVIN = async searchInput => {
     return toast.info(error);
   }
 };
+
+export const getCarVariables = async variable => {
+  try {
+    const carVariables = await api.get(
+      `/vehicles/GetVehicleVariableList?format=json`
+    );
+    if (carVariables) {
+      return carVariables;
+    }
+    if (carVariables.data.Results.length === 0) {
+      return toast.info(
+        'по вашему запросу не чего не найденно,ищите что-то адекватное. '
+      );
+    }
+  } catch (error) {
+    return toast.info(error);
+  }
+};

@@ -1,19 +1,16 @@
-import {
-  ItemCarStyled,
-  ItemLinkCarStyled,
-  ListCarStyled,
-} from './ListCar.styled';
+import { ItemCarStyled, ListCarStyled } from './ListCar.styled';
 
 export const ListCar = ({ movies }) => {
   return (
     <ListCarStyled>
       {movies.map(({ VariableId, Variable, Value }) => (
         <ItemCarStyled key={VariableId}>
-          <ItemLinkCarStyled to={`/cars/${VariableId}`}>
+          <p>
             {Value &&
               Value !== 'Not Applicable' &&
-              `Value :${Value} Variable: ${Variable}`}
-          </ItemLinkCarStyled>
+              `Value :${Value} 
+              Variable: ${Variable}`}
+          </p>
         </ItemCarStyled>
       ))}
     </ListCarStyled>

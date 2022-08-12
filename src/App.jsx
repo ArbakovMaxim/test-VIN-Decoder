@@ -5,6 +5,8 @@ import { lazy, Suspense } from 'react';
 const Layout = lazy(() => import('Layout/Layout'));
 const Home = lazy(() => import('pages/Home'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
+const Variables = lazy(() => import('pages/Variables/Variables'));
+const VariableAll = lazy(() => import('pages/VariableAll/VariableAll'));
 
 export const App = () => {
   return (
@@ -13,6 +15,8 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="/variables" element={<VariableAll />} />
+            <Route path="/variables/:VariableId" element={<Variables />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
