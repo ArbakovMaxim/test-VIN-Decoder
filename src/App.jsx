@@ -16,7 +16,7 @@ export const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/variables" element={<VariableAll />} />
-            <Route path="/variables/:VariableId" element={<Variables />} />
+            <Route path="/variables/:ID" element={<Variables />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

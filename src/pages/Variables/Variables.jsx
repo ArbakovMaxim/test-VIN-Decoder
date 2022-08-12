@@ -4,47 +4,38 @@ import * as api from 'services/Api';
 import { WraperInfo } from './Variables.styled';
 
 const Variables = () => {
-  const { variable } = useParams();
+  const { ID } = useParams();
   const [variablesInfo, setVariablesInfo] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const car = await api.getCarVariables(variable);
-      if (car) {
-        setVariablesInfo(car.data);
+      const infoVariable = await api.getCarVariables();
+      if (infoVariable) {
+        setVariablesInfo(infoVariable.data.Results);
       }
     };
     fetchMovies();
-  }, [variable]);
+  }, []);
 
-  console.log(variablesInfo);
+  const filterVariable = () => {
+    return variablesInfo.filter(v => {
+      return ID.includes(v.ID);
+    });
+  };
+
+  const oneVariables = filterVariable();
 
   return (
     <WraperInfo>
-      <ul>
-        <li>
-          <p>DataType: "string"</p>
-        </li>
-        <li>
-          <p>
-            Description: "
-            <p>
-              This field stores any other battery information that does not
-              belong to any of the other battery related fields.
-            </p>
-            "
-          </p>
-        </li>
-        <li>
-          <p></p>
-        </li>
-        <li>
-          <p></p>
-        </li>
-        <li>
-          <p></p>
-        </li>
-      </ul>
+      {oneVariables.map(oneVariable => (
+        <ul key={oneVariable.ID}>
+          <li>ID: {ID}</li>
+          <li>name:{oneVariable.Name}</li>
+          <li>DataType: {oneVariable.DataType}</li>
+          <li>Description: {oneVariable.Description}</li>
+          <li>GroupName: {oneVariable.GroupName}</li>
+        </ul>
+      ))}
     </WraperInfo>
   );
 };

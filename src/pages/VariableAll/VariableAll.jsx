@@ -17,17 +17,15 @@ const VariablesAll = () => {
     fetchMovies();
   }, [variable]);
 
-  console.log(variablesInfo);
-
   return (
     <WraperVar>
       <ul>
         {variablesInfo.map(({ ID, Name, Description }) => (
           <li key={ID}>
-            <ItemLinkVariablesStyled to={`/variables`}>
-              {Name &&
-                `Name :${Name} 
-                Description:`}
+            <ItemLinkVariablesStyled to={`/variables/${ID}`}>
+              Name : {Name}
+              <br />
+              Description:
               {Description}
             </ItemLinkVariablesStyled>
           </li>
