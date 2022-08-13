@@ -2,13 +2,13 @@ import { BtnSearch, Eror, FormSearc, Input } from './SearchForm.styled';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 
-export const SearchForm = ({ fetchAuto }) => {
+export const SearchForm = ({ setSearchQuery }) => {
   let schema = yup.object().shape({
     vinCode: yup.string().trim().max('17', 'maximum 17 characters').required(),
   });
 
   const hendleSubmit = (values, { resetForm }) => {
-    fetchAuto(values.vinCode);
+    setSearchQuery(values.vinCode);
     resetForm();
   };
 
