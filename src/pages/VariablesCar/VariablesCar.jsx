@@ -1,3 +1,4 @@
+import sanitizeHtml from 'sanitize-html';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from 'services/Api';
@@ -26,7 +27,9 @@ const VariablesCar = () => {
               Name : {Name}
               <br />
               Description:
-              {Description}
+              {sanitizeHtml(Description, {
+                allowedTags: [],
+              })}
             </ItemLinkVariablesStyled>
           </li>
         ))}

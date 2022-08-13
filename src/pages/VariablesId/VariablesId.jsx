@@ -1,3 +1,4 @@
+import sanitizeHtml from 'sanitize-html';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from 'services/Api';
@@ -32,7 +33,12 @@ const VariablesId = () => {
           <li>ID: {ID}</li>
           <li>name:{oneVariable.Name}</li>
           <li>DataType: {oneVariable.DataType}</li>
-          <li>Description: {oneVariable.Description}</li>
+          <li>
+            Description:{' '}
+            {sanitizeHtml(oneVariable.Description, {
+              allowedTags: [],
+            })}
+          </li>
           <li>GroupName: {oneVariable.GroupName}</li>
         </ul>
       ))}

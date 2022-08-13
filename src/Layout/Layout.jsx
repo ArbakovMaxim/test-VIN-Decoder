@@ -1,8 +1,7 @@
 import { HeaderBox } from 'Layout/Header/Header';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container } from './Layout.styled';
-import { Main } from './Main/Main.styled';
+import { Container, Main } from './Layout.styled';
 
 const Layout = () => {
   return (
