@@ -1,9 +1,9 @@
 import { ItemCarStyled, ListCarStyled } from './ListCar.styled';
 
-export const ListCar = ({ movies }) => {
+export const ListCar = ({ autoInfo }) => {
   return (
     <ListCarStyled>
-      {movies.map(({ VariableId, Variable, Value }) => (
+      {autoInfo.map(({ VariableId, Variable, Value }) => (
         <ItemCarStyled key={VariableId}>
           <p>
             {Value &&

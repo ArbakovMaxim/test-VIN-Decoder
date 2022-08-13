@@ -13,22 +13,19 @@ const Home = () => {
       return;
     }
     const auto = await api.getDecodeVIN(searchInput);
-    console.log(auto);
 
     if (auto) {
       setAutoInfo(auto);
     }
     if (auto.length === 0) {
-      toast.info(
-        'по вашему запросу не чего не найденно,ищите что-то адекватное. '
-      );
+      toast.info('according to your request, nothing was found. ');
     }
   };
 
   return (
     <div>
       <SearchForm fetchAuto={fetchAuto} />
-      {autoInfo.length > 0 && <ListCar movies={autoInfo} />}
+      {autoInfo.length > 0 && <ListCar autoInfo={autoInfo} />}
       <ToastContainer />
     </div>
   );

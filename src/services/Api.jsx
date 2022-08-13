@@ -15,9 +15,7 @@ export const getDecodeVIN = async searchInput => {
       return decodeVin.data.Results;
     }
     if (decodeVin.data.Results.length === 0) {
-      return toast.info(
-        'по вашему запросу не чего не найденно,ищите что-то адекватное. '
-      );
+      return toast.info('according to your request, nothing was found. ');
     }
   } catch (error) {
     return toast.info(error);
@@ -33,9 +31,7 @@ export const getCarVariables = async variable => {
       return carVariables;
     }
     if (carVariables.data.Results.length === 0) {
-      return toast.info(
-        'по вашему запросу не чего не найденно,ищите что-то адекватное. '
-      );
+      return toast.info('according to your request, nothing was found. ');
     }
   } catch (error) {
     return toast.info(error);

@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from 'services/Api';
-import { WraperInfo } from './Variables.styled';
+import { WraperInfo } from './VariablesId.styled';
 
-const Variables = () => {
+const VariablesId = () => {
   const { ID } = useParams();
   const [variablesInfo, setVariablesInfo] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchVariablesId = async () => {
       const infoVariable = await api.getCarVariables();
       if (infoVariable) {
         setVariablesInfo(infoVariable.data.Results);
       }
     };
-    fetchMovies();
+    fetchVariablesId();
   }, []);
 
   const filterVariable = () => {
@@ -40,4 +40,4 @@ const Variables = () => {
   );
 };
 
-export default Variables;
+export default VariablesId;

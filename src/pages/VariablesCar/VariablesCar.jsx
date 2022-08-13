@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from 'services/Api';
-import { ItemLinkVariablesStyled, WraperVar } from './VariableAll.styled';
+import { ItemLinkVariablesStyled, WraperVar } from './VariablesCar.styled';
 
-const VariablesAll = () => {
+const VariablesCar = () => {
   const { variable } = useParams();
   const [variablesInfo, setVariablesInfo] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchCarVariables = async () => {
       const car = await api.getCarVariables(variable);
       if (car) {
         setVariablesInfo(car.data.Results);
       }
     };
-    fetchMovies();
+    fetchCarVariables();
   }, [variable]);
 
   return (
@@ -35,4 +35,4 @@ const VariablesAll = () => {
   );
 };
 
-export default VariablesAll;
+export default VariablesCar;
