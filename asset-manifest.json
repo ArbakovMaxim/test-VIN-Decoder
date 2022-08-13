@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/test-VIN-Decoder/static/css/main.7acaea2f.css",
-    "main.js": "/test-VIN-Decoder/static/js/main.40a90df7.js",
+    "main.js": "/test-VIN-Decoder/static/js/main.648b05ed.js",
     "static/js/231.a7fca4a5.chunk.js": "/test-VIN-Decoder/static/js/231.a7fca4a5.chunk.js",
-    "static/js/412.78df97e4.chunk.js": "/test-VIN-Decoder/static/js/412.78df97e4.chunk.js",
+    "static/js/223.4eac25fe.chunk.js": "/test-VIN-Decoder/static/js/223.4eac25fe.chunk.js",
     "static/js/693.7a25d719.chunk.js": "/test-VIN-Decoder/static/js/693.7a25d719.chunk.js",
     "static/js/564.efc62cd6.chunk.js": "/test-VIN-Decoder/static/js/564.efc62cd6.chunk.js",
     "static/js/524.eb97bbd0.chunk.js": "/test-VIN-Decoder/static/js/524.eb97bbd0.chunk.js",
@@ -13,9 +13,9 @@
     "static/media/notFound.png": "/test-VIN-Decoder/static/media/notFound.cd232bf3c82b1c5955f6.png",
     "index.html": "/test-VIN-Decoder/index.html",
     "main.7acaea2f.css.map": "/test-VIN-Decoder/static/css/main.7acaea2f.css.map",
-    "main.40a90df7.js.map": "/test-VIN-Decoder/static/js/main.40a90df7.js.map",
+    "main.648b05ed.js.map": "/test-VIN-Decoder/static/js/main.648b05ed.js.map",
     "231.a7fca4a5.chunk.js.map": "/test-VIN-Decoder/static/js/231.a7fca4a5.chunk.js.map",
-    "412.78df97e4.chunk.js.map": "/test-VIN-Decoder/static/js/412.78df97e4.chunk.js.map",
+    "223.4eac25fe.chunk.js.map": "/test-VIN-Decoder/static/js/223.4eac25fe.chunk.js.map",
     "693.7a25d719.chunk.js.map": "/test-VIN-Decoder/static/js/693.7a25d719.chunk.js.map",
     "564.efc62cd6.chunk.js.map": "/test-VIN-Decoder/static/js/564.efc62cd6.chunk.js.map",
     "524.eb97bbd0.chunk.js.map": "/test-VIN-Decoder/static/js/524.eb97bbd0.chunk.js.map",
@@ -25,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.40a90df7.js"
+    "static/js/main.648b05ed.js"
   ]
 }
